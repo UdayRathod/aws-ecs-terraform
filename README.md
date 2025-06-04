@@ -10,16 +10,16 @@ ECS Service
 Load Balancer
 Security groups
 
-# Dockerfile directory holds the Dockerfile, index.html & resume.
+# Dockerfile directory holds the Dockerfile, index.html & resume, to use your Resume follow below steps
 Modify the below files to host your resume on ECS container. 
 1) Place your resume file
-2) Update the COPY command in Dockerfile with your resume file name: COPY <your-resume-file-name> /usr/share/nginx/html/resume.pdf
+2) Update the COPY command in Dockerfile with your resume file name: COPY "your-resume-file-name" /usr/share/nginx/html/resume.pdf
 
 # Create the Docker image
 docker build -t resume-hosting-app:latest .
 
 # Tag & push to DockerHub
-docker tag resume-hosting-app:latest <your-dockerhub-username>/<repo-name>:<tag>
+docker tag resume-hosting-app:latest "your-dockerhub-username"/"repo-name":"tag"
 
 
 # Getting Started with Terraform
