@@ -10,7 +10,19 @@ ECS Service
 Load Balancer
 Security groups
 
-# Getting Started
+# Dockerfile directory holds the Dockerfile, index.html & resume.
+Modify the below files to host your resume on ECS container. 
+1) Place your resume file
+2) Update the COPY command in Dockerfile with your resume file name: COPY <your-resume-file-name> /usr/share/nginx/html/resume.pdf
+
+# Create the Docker image
+docker build -t resume-hosting-app:latest .
+
+# Tag & push to DockerHub
+docker tag resume-hosting-app:latest <your-dockerhub-username>/<repo-name>:<tag>
+
+
+# Getting Started with Terraform
 To get started with deploying the AWS services using Terraform, follow these steps:
 
 1) Clone this repository to your local machine.
@@ -30,8 +42,10 @@ To get started with deploying the AWS services using Terraform, follow these ste
 
 4) Navigate to the desired service directory within the repository.
 
-5) Run terraform init to initialize the Terraform workspace.
+5) Update your image name in the "container_definitions" in "aws_ecs_task_definition"
 
-6) Run terraform plan to review the planned infrastructure changes.
+6) Run terraform init to initialize the Terraform workspace.
 
-7) Run terraform apply to apply the Terraform configurations and provision the AWS resources.
+7) Run terraform plan to review the planned infrastructure changes.
+
+8) Run terraform apply to apply the Terraform configurations and provision the AWS resources.
