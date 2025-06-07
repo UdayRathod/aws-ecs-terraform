@@ -49,3 +49,14 @@ To get started with deploying the AWS services using Terraform, follow these ste
 7) Run terraform plan to review the planned infrastructure changes.
 
 8) Run terraform apply to apply the Terraform configurations and provision the AWS resources.
+
+
+# Contributing
+Contributions are welcome!
+To contribute, please fork the repository, create a new branch for your feature or bugfix, and submit a pull request.
+For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+# License
+This project is licensed under the MIT License.
